@@ -5,10 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login using local storage</title>
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Login -->
+    <form id="form_user">
+        
+        <span class="inLineBlock">
+            <label for="input_userName">Nome de usuário:</label>
+            <input type="text" id="input_userName" minlength="4" maxlength="24" placeholder="Nome de usuário" required>
+        </span>
+        <span class="inLineBlock">
+            <label for="input_userPassword">Senha do usuário:</label>
+            <input type="password" id="input_userPassword" minlength="8" maxlength="24" placeholder="Senha" required>
+        </span>
+        <span class="inLine">
+            <input type="checkbox" id="input_showPassword">
+            <label for="input_showPassword">Mostrar senha</label>
+        </span>
+        <input type="submit" value="Entrar">
+    </form>
+    <div id="afterLogin">
+        <h1 class="wellcomeMsg">Seja bem-vindo(a) <span class="userName">Jheff</span></h1>
+        <button class="exitBtn">Sair</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
