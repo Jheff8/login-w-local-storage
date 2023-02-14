@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,7 @@
 </head>
 <body>
     <!-- Login -->
-    <form id="form_user">
-        
+    <form id="form_user"> 
         <span class="inLineBlock">
             <label for="input_userName">Nome de usuário:</label>
             <input type="text" id="input_userName" minlength="4" maxlength="24" placeholder="Nome de usuário" required>
@@ -23,12 +22,30 @@
             <input type="checkbox" id="input_showPassword">
             <label for="input_showPassword">Mostrar senha</label>
         </span>
-        <input type="submit" value="Entrar">
+        <span class="inLineSubmits">
+            <input type="submit" value="Entrar" id="input_submitUser">
+            <button type="button" id="createAccountBtn">Criar conta</button>
+        </span>
     </form>
-    <div id="afterLogin">
-        <h1 class="wellcomeMsg">Seja bem-vindo(a) <span class="userName">Jheff</span></h1>
-        <button class="exitBtn">Sair</button>
-    </div>
+    <form id="form_createUser">
+        <span class="createInLineBlock">
+            <label for="input_createName">Crie um nome de usuário:</label>
+            <input type="text" id="input_createName" minlength="4" maxlength="24" placeholder="Nome de usuário" required>
+        </span>
+        <span class="createInLineBlock">
+            <label for="input_createPassword">Crie uma senha de usuário:</label>
+            <input type="password" id="input_createPassword" minlength="8" maxlength="24" placeholder="Senha" required>
+        </span>
+        <span class="createInLine">
+            <input type="checkbox" id="input_createShowPassword">
+            <label for="input_createShowPassword">Mostrar senha</label>
+        </span>
+        <span class="CreateInLineSubmits">
+            <input type="submit" value="Criar" id="input_createdAccount">
+            <button type="button" id="backToLogin">Voltar</button>
+        </span>
+    </form>
+    
     <script src="script.js"></script>
 </body>
 </html>

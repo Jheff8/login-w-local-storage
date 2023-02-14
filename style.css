@@ -16,7 +16,7 @@ html, body{
 form#form_user{
     position: relative;
     border: 1px solid black;
-    padding: 20px 10px 10px 10px;
+    padding: 30px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     width: 70vw;
@@ -29,7 +29,6 @@ span.inLineBlock{
     align-items: center;
     max-width: 70%;
     margin-top: 10px;
-
 }
 span.inLineBlock label{
     font-size: 18px;
@@ -53,34 +52,40 @@ span.inLine{
 }
 span.inLine label, span.inLine input{cursor: pointer;}
 
-input[type="submit"]{
+input[type="submit"], button#createAccountBtn, button#backToLogin{
     margin: 15px auto 10px auto;
     width: 6em;
     padding: 5px;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
-    background-color: transparent;
-    border: 1px solid blue;
-    /* box-shadow:  -3px 2px 0px 2px rgba(0, 0, 0, .6); */
-    color: black;
-    transition: .1s;
-}
-input[type="submit"]:hover{
     background-color: blue;
     border: 1px solid transparent;
+    color: white;
+    transition: .1s;
+}
+input[type="submit"]:hover, button#createAccountBtn:hover, button#backToLogin:hover{
     transform: scale(1.06);
     transition: .1s;
-    color: white;
 }
-
+button#createAccountBtn, button#backToLogin{
+    background-color: transparent;
+    border: 1px solid blue;
+    color: black;
+}
+span.inLineSubmits{
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
 div#afterLogin{
-    visibility: hidden;
-    position: absolute;
-    top: 10%;
-    left: 0%;
     font-size: 20px;
 }
-button.exitBtn{
+button#exitBtn{
     padding: 5px 10px;
     border: 1px solid rgba(0, 0, 0, .7);
     border-radius: 5px;
@@ -89,9 +94,62 @@ button.exitBtn{
     background-color: white;
     margin-top: 120px;
     transition: .1s;
-
 }
-button.exitBtn:hover{
+button#exitBtn:hover{
     transform: scale(1.07);
     transition: .1s;
 }
+form#form_createUser{
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 30px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    background-image: linear-gradient(blue 10%, white 11%);
+    border-radius: 8px;
+}
+span.createInLineBlock label{
+    cursor: pointer;
+    font-size: 18px;
+}
+span.createInLineBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 83%;
+    margin-top: 10px;
+}
+span.createInLineBlock input{
+    padding: 6px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .7);
+
+}
+span.createInLineBlock input:focus{
+    outline: none;
+}
+span.createInLine{
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+}
+span.createInLine input, span.createInLine label{cursor: pointer;}
+
+span.CreateInLineSubmits{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 190px;
+}
+
+
