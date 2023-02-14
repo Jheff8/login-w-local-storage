@@ -20,9 +20,6 @@ let users = [
     {name: 'aubaubaub', password: 'aubaubaub'}
 ]
 
-
-localStorage.setItem('users', JSON.stringify(users))
-
 showPassword.addEventListener('click', showOrHide)
 createShowPassword.addEventListener('click', showOrHide)
 
@@ -54,7 +51,12 @@ formLogin.addEventListener('submit', (e)=>{
     let userName = document.querySelector('#input_userName').value
     let userPassword = document.querySelector('#input_userPassword').value
     const userStorage = localStorage.getItem('users')
-    const searchName = JSON.parse(userStorage).find(names => names.name == userName)
+    let searchName = []
+    if(!userStorage){
+        let searchName = users.find(names => names.name == userName)
+    }else{
+        let searchName = JSON.parse(userStorage).find(names => names.name == userName)
+    }
     if (!searchName){
         window.alert('Usuário não encontrado')
     }else if(searchName.password == userPassword){
