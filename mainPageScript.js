@@ -1,15 +1,15 @@
 let welcomeMsg = document.querySelector('#welcomeMsg')
 
 const exitBtn = document.querySelector('#exitBtn')
-const nome = localStorage.getItem('atualUser')
-window.history.forward(1)
-if (!nome){
-    document.querySelector('#afterLogin').style.visibility = 'hidden'
+const currentUser = sessionStorage.getItem('currentUser')
+
+if (!currentUser){
+    window.alert('Erro ao carregar a página.')
+    window.location.href = 'index.html'
 }else{
-    welcomeMsg.innerText = JSON.parse(nome)
+    welcomeMsg.innerText = JSON.parse(currentUser)
 }
 exitBtn.addEventListener('click', () => {
-    localStorage.removeItem('atualUser')
-    console.log('opi')
-    window.history.back()
+    sessionStorage.removeItem('currentUser')
+    window.location.href = 'index.html'
 })
